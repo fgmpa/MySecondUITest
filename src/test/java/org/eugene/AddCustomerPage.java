@@ -21,6 +21,11 @@ public class AddCustomerPage {
 
     @FindBy(xpath = "//input[@ng-model='postCd']")
     private WebElement postCodeField;
+
+    @FindBy(xpath = "//input[@ng-model='lName']")
+    private WebElement lNameField;
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement addButton;
     public String generatePostCode(){
         Random r = new Random(9);
         String code = "";
@@ -34,8 +39,14 @@ public class AddCustomerPage {
     public void inputPostCode(String code){
         postCodeField.sendKeys(code);
     }
-    public void clickAdd() {
+    public void clickAddCustomer() {
         btnAdd.click();
+    }
+    public void inputLastName(String name){
+        lNameField.sendKeys(name);
+    }
+    public void clickAddButton() {
+        addButton.click();
     }
     public void inputFirstName(String code) {
         String result = "";

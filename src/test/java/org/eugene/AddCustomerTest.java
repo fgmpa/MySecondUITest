@@ -27,7 +27,7 @@ public class AddCustomerTest { //TODO добавить базовый класс
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        addPage.clickAdd();
+        addPage.clickAddCustomer();
         try {
             // Задержка на 2 секунды (2000 миллисекунд)
             Thread.sleep(1000);                     //TODO сделаиь нормальную задержку
@@ -36,5 +36,7 @@ public class AddCustomerTest { //TODO добавить базовый класс
         }
         addPage.inputPostCode(PostCode);
         addPage.inputFirstName(PostCode);
+        addPage.inputLastName("Scherbakov");
+        addPage.clickAddButton();
     }
 }
